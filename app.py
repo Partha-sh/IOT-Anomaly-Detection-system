@@ -4,12 +4,20 @@ import pandas as pd
 import joblib
 from pathlib import Path
 
-from tensorflow.keras.models import load_model
+import tensorflow as tf
+
+st.set_page_config(
+    page_title="Industrial IoT Anomaly Detection",
+    page_icon="🏭",
+    layout="centered"
+)
 
 # Load assets relative to this file so the app works from any launch directory.
 BASE_DIR = Path(__file__).resolve().parent
 
-model = load_model(BASE_DIR / "autoencoder_model.keras")
+model = tf.keras.models.load_model(
+    BASE_DIR / "autoencoder_model.keras"
+)
 scaler = joblib.load(BASE_DIR / "scaler.pkl")
 threshold = float(np.asarray(joblib.load(BASE_DIR / "threshold.pkl")).ravel()[0])
 
