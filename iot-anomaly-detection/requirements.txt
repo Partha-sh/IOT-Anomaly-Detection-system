@@ -1,6 +1,6 @@
+
 streamlit==1.45.1
-tensorflow==2.16.2 ; sys_platform == "darwin" and platform_machine == "x86_64"
-tensorflow==2.19.0 ; sys_platform != "darwin" or platform_machine != "x86_64"
+tensorflow==2.16.2
 numpy==1.26.4
 pandas==2.2.3
 scikit-learn==1.6.1
